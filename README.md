@@ -1,30 +1,44 @@
-# DuckDuckGoBorderExtension
+DuckDuckGoBorderExtension
 
-Adds a red border when using DDG site.
+Adds a customizable border when using DuckDuckGo.
 
-## Overview
+Overview
 
-DuckDuckGoBorderExtension is a simple browser extension that visually highlights the DuckDuckGo website by adding a red border around the page. This helps users quickly identify when they are browsing DuckDuckGo.
+DuckDuckGoBorderExtension is a simple browser extension that visually highlights the DuckDuckGo website by adding a border around the page. This helps users quickly identify when they are browsing DuckDuckGo.
 
-I literally created it as a tester as I am learning VSCode and github together.  This extension serves as a reminder to me that I am currently on the DDG browser.
+Originally created as a learning project while experimenting with VSCode and GitHub, this extension serves as a personal reminder that you are on the DuckDuckGo website.
 
-## Features
+Features
 
-- Automatically adds a red border to DuckDuckGo pages
-- Lightweight and easy to use
-- No configuration required
+Automatically adds a border to DuckDuckGo pages
 
-## Installation
+Customizable border thickness and color via the tools menu
 
-1. Clone or download this repository.
-2. Open your browser's extension/add-on page.
-3. Load the extension as an unpacked extension from the directory.
+Tools button added to the top-left corner of the page for quick adjustments
 
-## Usage
+Lightweight and easy to use
 
-Once installed, simply visit [DuckDuckGo](https://duckduckgo.com). The extension will automatically add a red border to the page.
+No configuration required to start
 
-## License
+Installation
+
+Clone or download this repository.
+
+Open your browser's extension/add-on page.
+
+Load the extension as an unpacked extension from the directory.
+
+Usage
+
+Once installed, visit DuckDuckGo
+. The extension will automatically add a border to the page.
+
+Use the Tools button in the top-left corner to adjust:
+
+Border color
+
+Border thickness
+
+License
 
 MIT License
-
