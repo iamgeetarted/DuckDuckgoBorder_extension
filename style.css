@@ -1,0 +1,60 @@
+/* The content script now controls the border. Keep body styles untouched by default. */
+
+/* Floating button in the top-left corner */
+.ddg-border-btn{
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2147483647; /* very high so it's above page content */
+  width: 36px;
+  height: 36px;
+  padding:6px;
+  border-radius:8px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor: pointer;
+}
+.ddg-border-btn svg{ display:block; }
+.ddg-border-btn:focus{ outline: 2px solid #2684ff; }
+
+/* Popup panel */
+.ddg-popup{
+  position: fixed;
+  top: 52px;
+  left: 8px;
+  z-index: 2147483647;
+  width: 260px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transform-origin: top left;
+  opacity: 0;
+  transform: scale(.98) translateY(-4px);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+}
+.ddg-popup.visible{
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+.ddg-popup-row{ margin:8px 0; display:flex; align-items:center; gap:8px; }
+.ddg-popup label{ font-size:13px; }
+.ddg-popup select.ddg-color{ flex:1; padding:6px; font-size:13px; }
+.ddg-popup input.ddg-thickness{ width:100%; }
+.ddg-popup .ddg-actions{ justify-content:flex-end; }
+.ddg-popup .ddg-close{ padding:6px 8px; border-radius:6px; background:#f1f1f1; border:1px solid rgba(0,0,0,0.08); cursor:pointer; }
+
+/* small responsive tweak for narrow viewports */
+@media (max-width:320px){
+  .ddg-popup{ width: 92%; left:4%; }
+}
+
+

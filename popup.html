@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DuckDuckGo Border</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container" role="dialog" aria-label="DuckDuckGo Border status">
+    <!-- Inline duck SVG (simple friendly duck icon) -->
+    <div class="duck" aria-hidden="true">
+      <svg viewBox="0 0 100 100" width="72" height="72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <radialGradient id="g" cx="50%" cy="35%" r="60%">
+            <stop offset="0%" stop-color="#fff" stop-opacity=".25"/>
+            <stop offset="100%" stop-color="#000" stop-opacity=".08"/>
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="48" fill="#ffffff" />
+        <circle cx="50" cy="50" r="48" fill="url(#g)" />
+        <!-- Beak -->
+        <path d="M64 52c8 0 14-6 14-14 0-6-6-12-14-12-4 0-8 2-10 4" fill="#f39c12" />
+        <!-- Head / eye -->
+        <circle cx="40" cy="42" r="18" fill="#ffdd59" />
+        <circle cx="46" cy="38" r="4" fill="#222" />
+        <!-- Body accent -->
+        <path d="M18 68c8 12 26 20 40 20s32-8 40-20c0 0-8 10-40 10S18 68 18 68z" fill="#ffdd59" opacity="0.95"/>
+      </svg>
+    </div>
+
+    <div class="message">DuckDuckGo border enabled</div>
+  </div>
+
+  <script>
+    // Close the popup after 5 seconds with a short fade-out.
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.container');
+      // After 5s, fade then close.
+      setTimeout(() => {
+        container.classList.add('fade-out');
+        // Give the animation 400ms to finish, then close the popup.
+        setTimeout(() => {
+          window.close();
+        }, 400);
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
